@@ -1,0 +1,109 @@
+<div class="weather">
+    {% set forecast = getForecast(location) %}
+    <div class="days">
+        <span class="day current">Aujourd'hui</span>
+        <span class="day">Demain</span>
+        <span class="day">Après Demain</span>
+    </div>
+    <div class="forecasts">
+        <div class="forecast current">
+            <div class="row">
+                <img src="{{ forecast[0]["icon"] }}" alt="{{ forecast[0]["condition"] }}" class="icon">
+                <span class="temperature">{{ forecast[0]["avg_temp"] }}</span>
+            </div>
+            <span class="condition">{{ forecast[0]["condition"] }}</span>
+        </div>
+        <div class="forecast">
+            <div class="row">
+                <img src="{{ forecast[1]["icon"] }}" alt="{{ forecast[1]["condition"] }}" class="icon">
+                <span class="temperature">{{ forecast[1]["avg_temp"] }}</span>
+            </div>
+            <span class="condition">{{ forecast[1]["condition"] }}</span>
+        </div>
+        <div class="forecast">
+            <div class="row">
+                <img src="{{ forecast[2]["icon"] }}" alt="{{ forecast[2]["condition"] }}" class="icon">
+                <span class="temperature">{{ forecast[2]["avg_temp"] }}</span>
+            </div>
+            <span class="condition">{{ forecast[2]["condition"] }}</span>
+        </div>
+    </div>
+</div>
+
+<style>
+.weather {
+    background-color: #6B9BC7;
+    color: #E6EFF6;
+    width: fit-content;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px 10px;
+}
+
+.weather .forecast {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weather .forecast:not(.current) {
+    display: none;
+}
+
+.weather .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.weather .icon {
+    width: 100px;
+}
+
+.weather .condition {
+    font-size: 20px;
+}
+
+.weather .temperature {
+    font-size: 40px;
+}
+
+.weather .temperature::after {
+    content: "°";
+}
+
+.weather .day {
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.weather .day.current {
+    font-weight: bold;
+}
+</style>
+
+<script>
+const weatherDiv = document.querySelector(".weather");
+
+let currentDay = document.querySelector(".day.current");
+let currentForecast = document.querySelector(".forecast.current");
+const days = document.querySelectorAll(".day")
+const forecasts = document.querySelectorAll(".forecast")
+
+for(const i in days) {
+    const day = days[i];
+    const forecast = forecasts[i];
+    day.addEventListener("click", () => {
+        currentDay.classList.remove("current");
+        currentForecast.classList.remove("current");
+        day.classList.add("current");
+        forecast.classList.add("current");
+        currentDay = day;
+        currentForecast = forecast;
+    });
+} 
+</script>
