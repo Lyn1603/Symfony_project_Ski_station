@@ -29,10 +29,10 @@ class AppController extends AbstractController
 
 
     #[Route('/pistes{id}', name: 'app_pistesId')]
-    public function show(PistesRepository $pistesRepository): Response
+    public function show(int $id, PistesRepository $pistesRepository): Response
     {
         return $this->render('pet/show.html.twig', [
-            'piste{id}' => $pistesRepository->findBy(['id' => $id])),
+            'piste{id}' => $pistesRepository->findBy(['id' => $id])
         ]);
     }
 }
