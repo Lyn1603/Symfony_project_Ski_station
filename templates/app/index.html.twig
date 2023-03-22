@@ -4,52 +4,29 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
 </style>
 
-<div class="example-wrapper">
-
-    <h1> Ski&Co </h1>
-
-    <p>
-        Découvrez notre site et vivez des moments inoubliables sur les pistes enneigées !
+<div class=" bg-[#496C90] flex flex-row">
+<div>
+    <img src="{{ asset('medias/skieur.png') }}" alt="">
+    <h1 class=" px-[50px] text-[6rem] text-white mb-2"> SKI & CO </h1>
+    <p class=" px-[50px] text-white text-[25px] ">
+        Découvrez notre site et vivez des moments <br> inoubliables sur les pistes enneigées !
     </p>
 
-
-    <button>
-        <a href="">
+        <button onclick="" class="mx-[50px] bg-white text-[#637C96] rounded-lg	rounded-tl-none h-[8vh] w-[25vw]">
             Reserver maintenant
-        </a>
-    </button>
 
-    <ul>
-        <li>
-            <a href="">
-                Accueil
-            </a>
-        </li>
-        <li>
-            <a href="">
-                Services
-            </a>
-        </li>
-        <li>
-            <a href="">
-                A propos
-            </a>
-        </li>
-        <li>
-            <a href="">
-                Contact
-            </a>
-        </li>
-        <li>
-            <a href="">
-                Connexion
-            </a>
-        </li>
-    </ul>
+        </button>
+
+
+    <img class="px-0" src="{{ asset('medias/mountains.png') }}" alt="">
 
 </div>
+
+
+</div>
+
+
 {% endblock %}
