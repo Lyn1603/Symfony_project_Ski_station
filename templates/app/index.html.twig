@@ -4,27 +4,35 @@
 
 {% block body %}
 <style>
-
+.bg-skieur{
+    background-image: url("{{ asset('medias/bg-skieur.png') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+}
 </style>
 
-<div class=" bg-[#496C90] flex flex-row">
-<div>
-    <img src="{{ asset('medias/skieur.png') }}" alt="">
-    <h1 class=" px-[50px] text-[6rem] text-white mb-2"> SKI & CO </h1>
-    <p class=" px-[50px] text-white text-[25px] ">
+<div class=" flex flex-row">
+<div class="w-[50%] bg-[#496C90]">
+    <img class="w-[20vw] px-[70px]" src="{{ asset('medias/skieur.png') }}" alt="">
+    <h1 class=" px-[100px] text-[6rem] text-white mb-2"> SKI & CO </h1>
+    <p class=" px-[100px] text-white text-[20px] ">
         Découvrez notre site et vivez des moments <br> inoubliables sur les pistes enneigées !
     </p>
 
-        <button onclick="" class="mx-[50px] bg-white text-[#637C96] rounded-lg	rounded-tl-none h-[8vh] w-[25vw]">
-            Reserver maintenant
+        <button onclick="" class= " mt-8 mx-[100px] bg-white text-[#637C96] text-[1.8rem] rounded-[30px] rounded-tl-none h-[9vh] w-[25vw]">
+            RÉSERVEZ MAINTENANT
+        </button>      
 
-        </button>
 
-
-    <img class="px-0" src="{{ asset('medias/mountains.png') }}" alt="">
+    <img class="px-0 w-[52vw]" src="{{ asset('medias/mountains.png') }}" alt="">
 
 </div>
 
+    <div class="bg-skieur">
+
+    </div>
 
 </div>
 
