@@ -17,7 +17,6 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class AppController extends AbstractController
 {
     #[Route('/', name: 'app_app')]
-
     public function index(): Response
     {
         return $this->render('app/index.html.twig', [
