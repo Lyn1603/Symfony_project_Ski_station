@@ -12,29 +12,52 @@
     width: 50%;
 }
 </style>
-
-<div class=" flex flex-row">
-<div class="w-[50%] bg-[#496C90]">
-    <img class="w-[20vw] px-[70px]" src="{{ asset('medias/skieur.png') }}" alt="">
-    <h1 class=" px-[100px] text-[6rem] text-white mb-2"> SKI & CO </h1>
-    <p class=" px-[100px] text-white text-[20px] ">
-        Découvrez notre site et vivez des moments <br> inoubliables sur les pistes enneigées !
-    </p>
-
-        <button onclick="" class= " mt-8 mx-[100px] bg-white text-[#637C96] text-[1.8rem] rounded-[30px] rounded-tl-none h-[9vh] w-[25vw]">
-            RÉSERVEZ MAINTENANT
-        </button>      
+<div class="bg-[#496C90]">
 
 
-    <img class="px-0 w-[52vw]" src="{{ asset('medias/mountains.png') }}" alt="">
 
-</div>
+    <div class="flex flex-row ">
 
-    <div class="bg-skieur">
+        <div class="w-[50%] bg-[#496C90]">
+
+            <img class="w-[20vw] px-[70px]" src="{{ asset('medias/skieur.png') }}" alt="">
+            <h1 class=" px-[100px] text-[6rem] text-white mb-2"> SKI & CO </h1>
+            <p class=" px-[100px] text-white text-[20px] ">
+                Découvrez notre site et vivez des moments <br> inoubliables sur les pistes enneigées !
+            </p>
+
+            <button onclick="" class= " mt-8 mx-[100px] bg-white text-[#637C96] text-[1.8rem] rounded-[30px] rounded-tl-none h-[9vh] w-[25vw]">
+                RÉSERVEZ MAINTENANT
+            </button>
+
+            <img class="px-0 w-[52vw]" src="{{ asset('medias/mountains.png') }}" alt="">
+
+        </div>
+
+        <div class="bg-skieur">
+            <ul class="flex flex-row justify-center justify-around items-center mt-7 gap-[-5px] text-white  ">
+
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Connexion</a></li>
+
+            </ul>
+
+        </div>
+
 
     </div>
 
+
+
+
+
+
+
 </div>
+
 
 
 {% endblock %}
