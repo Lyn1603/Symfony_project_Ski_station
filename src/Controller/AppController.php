@@ -19,8 +19,8 @@ class AppController extends AbstractController
     #[Route('/connect', name: 'app_connect')]
     public function connexion(): Response
     {
-        return $this->render('app/index.html.twig', [
-            'controller_name' => 'AppController',
+        return $this->render('app/connect.html.twig', [
+            
         ]);
     }
 }
