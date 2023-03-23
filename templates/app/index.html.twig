@@ -11,6 +11,15 @@
             background-position: center;
             width: 50%;
         }
+
+        .wave{
+            background-image: url("{{ asset('medias/Wave.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 45vh;
+        }
     </style>
     <div class="bg-[#496C90] h-screen">
 
@@ -26,7 +35,7 @@
                         Découvrez notre site et vivez des moments inoubliables sur les pistes enneigées !
                     </p>
 
-                    <button onclick="" class= " font-thin mt-8 bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-4 w-max px-8">
+                    <button onclick="" class= "font-thin mt-8 bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-4 w-max px-8">
                         RÉSERVEZ MAINTENANT
                     </button>
 
@@ -49,14 +58,86 @@
 
             </div>
 
-
-
         </div>
 
+        <div class="bg-[#496C90] h-[80vh]">
+            <span class=" mt-8 text-white border-t-[50px] px-[15%]">
+            </span>
+            <div class= "font-thin mx-[25px] bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-2 w-max px-8">
+                SERVICES
+            </div>
 
 
+            <div class="flex flex-row justify-center items-center">
+
+                <div class="flex flex-row justify-center items-center w-[85vw] ">
+
+                <div class="flex flex-col gap-4 text-white">
+                    <img class=" mx-[40%] w-[89px]" src="{{ asset('medias/money.png') }}" alt="">
+                    <h2 class="text-center"> MEILLEUR PRIX</h2>
+                    <p>Prenez vos places dès maintenant La réservation sur le site officiel garantit le meilleur prix.</p>
+
+                </div>
 
 
+                <div class="flex flex-col gap-6 text-white">
+                    <img class=" mx-[40%] w-[89px]" src="{{ asset('medias/pass.png') }}" alt="">
+                    <h2 class="text-center"> SKI PASS</h2>
+                    <p>Réservez un logement et bénéficiez de conditions avantageuses pour votre forfait de ski.</p>
+
+                </div>
+
+
+                <div class="flex flex-col gap-3 text-white">
+                    <img class=" mx-[36%] w-[89px]" src="{{ asset('medias/services.png') }}" alt="">
+                    <h2 class="text-center text-[1.1rem] "> SERVICES </h2>
+                    <p>Service clientèle par téléphone avant et pendant votre séjour.</p>
+
+                </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="wave">
+
+            </div>
+            <div class= "font-thin mx-[25px] bg-[#496C90] text-white text-2xl rounded-full rounded-tl-none py-2 w-max px-8">
+                STATIONS
+            </div>
+
+            <div class="flex flex-row justify-center items-center">
+
+                LES STATIONS ICI
+
+            </div>
+
+            <div class="flex flex-col justify-left ">
+
+                <h1 class="text-6xl">
+                    APPLICATION
+                </h1>
+                <p>Téléchargez l’app et ne manquez rien</p>
+
+                <div class="flex flex-row justify-left items-center gap-5">
+                    <button onclick="" class= "font-thin bg-[#496C90] text-white  rounded-[15px]  py-4 w-max px-8">
+                        <span>
+                            Télécharger sur
+                        </span>
+                    </button>
+
+                    <button onclick="" class= "font-thin bg-[#496C90] text-white rounded-[15px]  py-4 w-max px-8">
+                       <span>
+                            Télécharger sur
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
 
 </div>
 
