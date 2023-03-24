@@ -1,0 +1,15 @@
+<div class="overflow-scroll w-full flex overflow-x-scroll space-x-10 p-20">
+    {% for restaurant in getRestaurants(piste_id) %}
+    <div class="flex-none w-[300px] h-[350px] overflow-hidden bg-[#112748] text-white rounded-[15px] grid-cols-1 grid-rows-2">
+        <img class="h-[50%] w-[100%] object-cover" src="{{ restaurant.imagePath }}" alt="{{ restaurant.name }}">
+        <div class="px-5 py-2 flex flex-col justify-evenly h-[50%]">
+            <h4 class="text-xl">{{ restaurant.name }}</h4>
+            <p class="text-base">{{ restaurant.description }}</p>
+            <div class="stars">
+                <span class="text-sm">{{ restaurant.starVoteCount }} Votes</span>
+            </div>
+            <a href="#" class="text-center border-white rounded-[5px] border px-2 py-1 hover:bg-white hover:text-[#112748] transition font-medium">Réserver</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

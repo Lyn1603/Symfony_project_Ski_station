@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "3131bf64947254931b643dbb775fe5e8",
-=======
-    "content-hash": "9234e1aedd3f6d5e3ba5cff2cbe87fc5",
->>>>>>> 276e221 (chore: merge lynda to yanis)
+    "content-hash": "f5a4aeea2d1ed4bc0f9846712a2e5117",
     "packages": [
         {
             "name": "doctrine/cache",
