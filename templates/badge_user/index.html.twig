@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BadgeUserController!{% endblock %}
+
+{% block body %}
+<style>
+
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+    <div class="container mx-auto mt-6">
+        <div class="flex flex-col md:flex-row">
+            <div class="flex-1 mb-6 md:mr-4">
+                <div class="flex flex-col">
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-1-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-1" class="mr-2" onchange="handleSuccessCheckboxChange('success-1')">
+                            <label for="success-1" class="text-lg font-semibold">Le Champion de la Piste</label>
+                        </div>
+                        <p id="success-1-text" class="text-gray-700">Déverrouillé lorsque vous skiez la piste la plus difficile de la station sans tomber une seule fois</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-2-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-2" class="mr-2" onchange="handleSuccessCheckboxChange('success-2')">
+                            <label for="success-2" class="text-lg font-semibold">Le Conquérant de la Montagne</label>
+                        </div>
+                        <p id="success-2-text" class="text-gray-700">Déverrouillé lorsque vous avez atteint tous les sommets de la station.</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-3-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-3" class="mr-2" onchange="handleSuccessCheckboxChange('success-3')">
+                            <label for="success-3" class="text-lg font-semibold">Le Surfeur des Neiges</label>
+                        </div>
+                        <p id="success-3-text" class="text-gray-700">Déverrouillé lorsque vous avez perfectionné votre technique de snowboard sur toutes les pistes de la station.</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-4-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-4" class="mr-2" onchange="handleSuccessCheckboxChange('success-4')">
+                            <label for="success-4" class="text-lg font-semibold">Le Skieur Fou</label>
+                        </div>
+                        <p id="success-4-text" class="text-gray-700">Déverrouillé lorsque vous avez fait du ski pendant plus de 10 heures consécutives en une seule journée.</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6" id="success-5-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-5" class="mr-2" onchange="handleSuccessCheckboxChange('success-5')">
+                            <label for="success-5" class="text-lg font-semibold">Le Photographe de la Montagne</label>
+                        </div>
+                        <p id="success-5-text" class="text-gray-700">Déverrouillé lorsque vous avez pris des photos de tous les paysages incroyables de la station.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 mb-6 md:ml-4">
+                <div class="flex flex-col">
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-6-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-6" class="mr-2" onchange="handleSuccessCheckboxChange('success-6')">
+                            <label for="success-6" class="text-lg font-semibold">Le Chasseur de Poudreuse</label>
+                        </div>
+                        <p id="success-6-text" class="text-gray-700">Déverrouillé lorsque vous avez skiez sur la poudreuse fraîche après une nuit de neige abondante</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-7-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-7" class="mr-2" onchange="handleSuccessCheckboxChange('success-7')">
+                            <label for="success-7" class="text-lg font-semibold">Le Skieur Nocturne</label>
+                        </div>
+                        <p id="success-7-text" class="text-gray-700">Déverrouillé lorsque vous avez skié jusqu'à la fermeture des remontées mécaniques.</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-8-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-8" class="mr-2" onchange="handleSuccessCheckboxChange('success-8')">
+                            <label for="success-8" class="text-lg font-semibold">Le Roi de la Vallée</label>
+                        </div>
+                        <p id="success-8-text" class="text-gray-700">Déverrouillé lorsque vous avez skié toutes les pistes de la vallée.</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6 mb-6" id="success-9-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-9" class="mr-2" onchange="handleSuccessCheckboxChange('success-9')">
+                            <label for="success-9" class="text-lg font-semibold">L'Explorateur</label>
+                        </div>
+                        <p id="success-9-text" class="text-gray-700">Déverrouillé lorsque vous avez exploré tous les coins et recoins de la station.</p>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg shadow-lg p-6" id="success-10-container">
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="success-10" class="mr-2" onchange="handleSuccessCheckboxChange('success-10')">
+                            <label for="success-10" class="text-lg font-semibold">Le Fou de Vitesse</label>
+                        </div>
+                        <p id="success-10-text" class="text-gray-700">Déverrouillé lorsque vous avez atteint la vitesse maximale de la station sur une piste spécialement désignée pour cela.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            function handleSuccessCheckboxChange(id) {
+                const checkbox = document.getElementById(id);
+                const text = document.getElementById(`${id}-text`);
+                const container = document.getElementById(`${id}-container`);
+                if (checkbox.checked) {
+                    text.classList.remove('text-gray-700');
+                    text.classList.add('text-blue-600');
+                    container.classList.remove('bg-gray-300');
+                    container.classList.add('bg-blue-100');
+                } else {
+                    text.classList.remove('text-blue-600');
+                    text.classList.add('text-gray-700');
+                    container.classList.remove('bg-blue-100');
+                    container.classList.add('bg-gray-300');
+                }
+            }
+        </script>
+
+
+            {% endblock %}
