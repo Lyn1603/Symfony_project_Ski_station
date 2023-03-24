@@ -20,7 +20,9 @@ class Domaine
     private ?string $pictureUrl = null;
 
     #[ORM\Column]
-    private ?int $open = null;
+    private ?bool $open = null;
+
+    
 
     
 
@@ -53,15 +55,17 @@ class Domaine
         return $this;
     }
 
-    public function getOpen(): ?int
+    public function isOpen(): ?bool
     {
         return $this->open;
     }
 
-    public function setOpen(int $open): self
+    public function setOpen(bool $open): self
     {
         $this->open = $open;
 
         return $this;
     }
+
+    
 }
