@@ -3,91 +3,67 @@
 {% block title %}Hello AppController!{% endblock %}
 
 {% block body %}
-<style>
-    .bg-skieur{
-        background-image: url("{{ asset('medias/bg-skieur.png') }}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 50%;
-    }
-</style>
-<div class="bg-[#496C90]">
+    <style>
+        .bg-skieur{
+            background-image: url("{{ asset('medias/bg-skieur.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 50%;
+        }
+    </style>
+    <div class="bg-[#496C90] h-screen">
 
 
 
-    <div class="flex flex-row ">
+        <div class="flex flex-row h-full ">
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <div class="w-[50%] relative bg-[#496C90] flex h-full">
-            <div class="w-10/12 mx-auto h-full flex flex-col mt-4">
-                <img class="w-[12vw] -ml-8 -mb-2 " src="{{ asset('medias/skieur.png') }}" alt="">
-                <h1 class="  text-[6rem] text-white font-bold -mb-2 "> SKI & CO </h1>
-                <p class=" font-thin tracking-wide text-white w-8/12 text-[20px] ">
-                    Découvrez notre site et vivez des moments inoubliables sur les pistes enneigées !
-                </p>
+            <div class="w-[50%] relative bg-[#496C90] flex h-full">
+                <div class="w-10/12 mx-auto h-full flex flex-col mt-4">
+                    <img class="w-[12vw] -ml-8 -mb-2 " src="{{ asset('medias/skieur.png') }}" alt="">
+                    <h1 class="  text-[6rem] text-white font-bold -mb-2 "> SKI & CO </h1>
+                    <p class=" font-thin tracking-wide text-white w-8/12 text-[20px] ">
+                        Découvrez notre site et vivez des moments inoubliables sur les pistes enneigées !
+                    </p>
 
-                <button onclick="" class= " font-thin mt-8 bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-4 w-max px-8">
-                    RÉSERVEZ MAINTENANT
-                </button>
-=======
-        <div class="w-[50%] bg-[#496C90]">
+                    <button onclick="" class= " font-thin mt-8 bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-4 w-max px-8">
+                        RÉSERVEZ MAINTENANT
+                    </button>
 
-            <img class="w-[20vw] px-[70px]" src="{{ asset('medias/skieur.png') }}" alt="">
-            <h1 class=" px-[100px] text-[6rem] text-white mb-2"> SKI & CO </h1>
-            <p class=" px-[100px] text-white text-[20px] ">
-                Découvrez notre site et vivez des moments <br> inoubliables sur les pistes enneigées !
-            </p>
->>>>>>> parent of 071d26b (fix  index :lipstick:)
+                </div>
 
-            <button onclick="" class= " mt-8 mx-[100px] bg-white text-[#637C96] text-[1.8rem] rounded-[30px] rounded-tl-none h-[9vh] w-[25vw]">
-                RÉSERVEZ MAINTENANT
-            </button>
+                <img class=" w-full  absolute flex bottom-0 left-0  h-[50%] object-cover" src="{{ asset('medias/mountains.png') }}" alt="">
 
-<<<<<<< HEAD
-            <img class="w-full absolute flex bottom-0 left-0 h-[50%] object-cover" src="{{ asset('medias/mountains.png') }}" />
+            </div>
 
-=======
-            <img class="px-0 w-[52vw]" src="{{ asset('medias/mountains.png') }}" alt="">
->>>>>>> parent of 071d26b (fix  index :lipstick:)
-=======
-        <div class="w-[50%] bg-[#496C90]">
+            <div class="bg-skieur ">
+                <ul class="flex flex-row justify-center text-[2.5vh] justify-around items-center mt-7  text-white  ">
 
-            <img class="w-[20vw] px-[70px]" src="{{ asset('medias/skieur.png') }}" alt="">
-            <h1 class=" px-[100px] text-[6rem] text-white mb-2"> SKI & CO </h1>
-            <p class=" px-[100px] text-white text-[20px] ">
-                Découvrez notre site et vivez des moments <br> inoubliables sur les pistes enneigées !
-            </p>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Connexion</a></li>
 
-            <button onclick="" class= " mt-8 mx-[100px] bg-white text-[#637C96] text-[1.8rem] rounded-[30px] rounded-tl-none h-[9vh] w-[25vw]">
-                RÉSERVEZ MAINTENANT
-            </button>
+                </ul>
 
-            <img class="px-0 w-[52vw]" src="{{ asset('medias/mountains.png') }}" alt="">
->>>>>>> parent of 071d26b (fix  index :lipstick:)
+            </div>
+
 
         </div>
 
-        <div class="bg-skieur">
-            <ul class="flex flex-row justify-center justify-around items-center mt-7 gap-[-5px] text-white  ">
-
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Connexion</a></li>
-
-            </ul>
-
-        </div>
-
-
-
     </div>
 
-    <div>
 
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda debitis deleniti enim incidunt laboriosam minima, minus perspiciatis voluptas! Accusamus culpa, debitis doloremque iusto necessitatibus nemo optio porro quisquam vel vitae.</p>
+
+<div class="flex w-screen h-[35vh] bg-[#496C90] items-center">
+    <div onclick="window.open('http://m.webcam-hd.com/val-d-arly-ot/ndb-mont-rond','mywindow');" class=" bg-[url('https://cdn.france-montagnes.com/sites/default/files/sarenne_laurent-salino-29.jpg')] bg-cover bg-center bg-no-repeat  flex mx-auto h-[30vh] w-10/12  rounded-xl rounded-tl-none justify-center items-center  "    >
+        <h1  class= " flex font-thin text-black text-2xl bg-blue-300 bg-opacity-50 rounded-xl ">
+            Observer les piste en direct
+        </h1>
 
     </div>
+</div>
+
+
+    {% endblock %}
