@@ -94,7 +94,7 @@ let currentForecast = document.querySelector(".forecast.current");
 const days = document.querySelectorAll(".day")
 const forecasts = document.querySelectorAll(".forecast")
 
-for(const i in days) {
+for(let i = 0; i < 3; i++) {
     const day = days[i];
     const forecast = forecasts[i];
     day.addEventListener("click", () => {
