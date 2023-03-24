@@ -1,3 +1,22 @@
+<style>
+.stars {
+  font-size: 20px;
+  line-height: 1;
+  font-family: sans-serif;
+  display: inline-block;
+
+  --limit: calc(var(--stars) * 20%);
+}
+  
+.stars::before {
+    letter-spacing: 3px;
+    content: '★★★★★';
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #fb1 var(--limit), #fff var(--limit));
+    -webkit-background-clip: text;
+  }
+</style>
+
 <div class="overflow-scroll w-full flex overflow-x-scroll space-x-10 p-20">
     {% for restaurant in getRestaurants(piste_id) %}
     <div class="flex-none w-[300px] h-[350px] overflow-hidden bg-[#112748] text-white rounded-[15px] grid-cols-1 grid-rows-2">
@@ -5,7 +24,8 @@
         <div class="px-5 py-2 flex flex-col justify-evenly h-[50%]">
             <h4 class="text-xl">{{ restaurant.name }}</h4>
             <p class="text-base">{{ restaurant.description }}</p>
-            <div class="stars">
+            <div class="flex gap-3">
+                <div class="stars" style="--stars: {{ restaurant.stars }};"></div>
                 <span class="text-sm">{{ restaurant.starVoteCount }} Votes</span>
             </div>
             <a href="#" class="text-center border-white rounded-[5px] border px-2 py-1 hover:bg-white hover:text-[#112748] transition font-medium">Réserver</a>
