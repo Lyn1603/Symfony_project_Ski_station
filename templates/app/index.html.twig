@@ -108,32 +108,71 @@
                 STATIONS
             </div>
 
-            <div class="flex flex-row justify-center items-center">
+            <div class="flex flex-row justify-center items-center gap-0.5 mt-8">
 
-                LES STATIONS ICI
+                <div class="flex flex-col gap-4 justify-center items-center ">
+                    <img class=" w-[95%]" src="{{ asset('medias/saisie.png') }}" alt="">
+                    <a href="">  <h2 class=" text-center text-[1.1rem]"> Les Saisies </h2> </a>
+                </div>
+
+                <div class="flex flex-col gap-4 justify-center items-center ">
+                    <img class=" w-[95%]" src="{{ asset('medias/crest.png') }}" alt="">
+                    <a href="">  <h2 class=" text-center text-[1.1rem]"> Crest-Volant Cohennoz </h2> </a>
+                </div>
+
+                <div class="flex flex-col gap-4 justify-center items-center ">
+                    <img class=" w-[95%]" src="{{ asset('medias/notre_dame.png') }}" alt="">
+                    <a href="">  <h2 class=" text-center text-[1.1rem]"> Notre-Dame-de-Bellecombe </h2> </a>
+                </div>
+
+                <div class="flex flex-col gap-4 justify-center items-center ">
+                    <img class=" w-[95%]" src="{{ asset('medias/parly.png') }}" alt="">
+                    <a href="">  <h2 class=" text-center text-[1.1rem]"> Praz-sur-Arly </h2> </a>
+                </div>
+
+                <div class="flex flex-col gap-4 justify-center items-center ">
+                    <img class=" w-[95%]" src="{{ asset('medias/flumet.png') }}" alt="">
+                    <a href="">  <h2 class=" text-center text-[1.1rem]"> Flumet </h2> </a>
+                </div>
 
             </div>
 
-            <div class="flex flex-col justify-left ">
+            <div class="flex flex-row justify-left gap-[30vw] mt-8 ">
 
-                <h1 class="text-6xl">
-                    APPLICATION
-                </h1>
-                <p>Téléchargez l’app et ne manquez rien</p>
+                <div class="flex flex-col justify-left gap-8 mt-[20vh] ml-8">
 
-                <div class="flex flex-row justify-left items-center gap-5">
-                    <button onclick="" class= "font-thin bg-[#496C90] text-white  rounded-[15px]  py-4 w-max px-8">
-                        <span>
-                            Télécharger sur
-                        </span>
-                    </button>
+                    <h1 class="text-[5rem]">
+                        Application
+                    </h1>
+                    <p>Téléchargez l’app et ne manquez rien</p>
 
-                    <button onclick="" class= "font-thin bg-[#496C90] text-white rounded-[15px]  py-4 w-max px-8">
-                       <span>
-                            Télécharger sur
-                        </span>
-                    </button>
+                    <div class="flex flex-row gap-4 w-full">
+                        <button onclick="" class= "font-thin bg-[#496C90] text-white rounded-[15px] py-2 px-8">
+                            <div class="flex flex-row gap-4">
+                                <img src="{{ asset('medias/apple.png') }}" alt="">
+                                <div class="flex flex-col">
+                                    <span class="text-center text-[12px]"> Télécharger sur </span>
+                                    <span class="text-2xl"> Apple Store </span>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button onclick="" class= "font-thin bg-[#496C90] text-white rounded-[15px] py-2 px-8">
+                            <div class="flex flex-row gap-4">
+                                <img src="{{ asset('medias/appstore.png') }}" alt="">
+                                <div class="flex flex-col">
+                                    <span class="text-center text-[12px]"> Télécharger sur </span>
+                                    <span class="text-2xl"> Play Store </span>
+                                </div>
+                            </div>
+                        </button>
+
+
+                    </div>
+
                 </div>
+
+                <img src="{{ asset('medias/male_iphone.png') }}" alt="">
 
             </div>
 
