@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const url = require("url");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +8,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+
 
     },
   },
