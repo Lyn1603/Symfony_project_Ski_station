@@ -60,7 +60,7 @@ class AppController extends AbstractController
     }
 
 
-    #[Route('/pistes', name: 'app_piste')]
+    #[Route('/{id}', name: 'app_piste')]
     public function pistes( PistesRepository $pistesRepository): Response
     {
         return $this->render('pistes/piste.html.twig', [
