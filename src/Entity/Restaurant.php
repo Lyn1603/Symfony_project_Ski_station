@@ -112,4 +112,12 @@ class Restaurant
     {
         return $this->total_stars / $this->star_vote_count; 
     }
+
+    public function vote(int $stars): self
+    {
+        $this->star_vote_count++;
+        $this->total_stars += $stars;
+        
+        return $this;
+    }
 }
