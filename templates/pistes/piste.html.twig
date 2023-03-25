@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .img {
+        width: 300px;
+        height: 200px;
+    }
+</style>
+    <div class="bg-[#496C90]">
+
+        <span class="mt-4 text-white border-b-[5px] px-[8%] rounded-[2px]">
+            </span>
+        <div class= "font-thin mx-[25px] bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-2 w-max px-8 mt-4">
+            Nom des pistes
+        </div>
+
+        <div class="flex flex-wrap gap-8 justify-center items-center mt-14 ">
+
+            {% for p in pistes %}
+
+                <div class= " font-thin bg-[#112748] text-white rounded-[15px] py-4 px-8">
+                    <div class="flex flex-row gap-4 ">
+                        <div class="flex flex-col gap-3">
+                            <img class="img" src="{{ asset('medias/piste.jpg') }}">
+                            <p class=" text-2xl"> {{ p.name }} </p>
+                            <a href=""> En savoir plus </a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
