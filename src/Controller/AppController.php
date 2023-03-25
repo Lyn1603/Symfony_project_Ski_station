@@ -15,7 +15,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AppController extends AbstractController
 {
-    #[Route('/app', name: 'app_app')]
+    #[Route('/', name: 'app_app')]
     public function index(): Response
     {
         return $this->render('app/index.html.twig', [
@@ -68,6 +68,4 @@ class AppController extends AbstractController
         ]);
     }
 
-
-    
 }
