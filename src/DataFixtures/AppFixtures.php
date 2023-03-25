@@ -2,7 +2,9 @@
 
 namespace App\DataFixtures;
 
+
 use App\Entity\Pistes;
+
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -10,6 +12,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+
         for ($i = 1; $i <= 10; $i++) {
             $pistes = new Pistes();
             $pistes->setName('Piste n° ' . $i);
