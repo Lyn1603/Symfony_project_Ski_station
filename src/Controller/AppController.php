@@ -99,6 +99,12 @@ class AppController extends AbstractController
         ));
     }
 
-   
+    #[Route('/success', name: 'app_success')] // route pour la page de succès
+    public function success(): Response
+    {
+        return $this->render('badge_user/index.html.twig');
+
+    }
+
 
 }
