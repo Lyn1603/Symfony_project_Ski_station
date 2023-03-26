@@ -1,12 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-    <h1>Add a station</h1>
-
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #496C90;
+        }
+    </style>
+        <h1 class="text-[2rem] text-white text-center">Add a station</h1>
+    <div class= " flex flex-col justify-center items-center gap-[20px]font-thin bg-[#112748] text-white rounded-[15px] py-4 px-8 ">
     {{ form_start(form) }}
     {{ form_row(form.name) }}
-
-
     {{ form_end(form) }}
-
+    </div>
 {% endblock %}
