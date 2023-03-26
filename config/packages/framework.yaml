@@ -17,6 +17,14 @@ framework:
     #fragments: true
     php_errors:
         log: true
+    
+    http_client:
+        scoped_clients:
+            weather.client:
+                base_uri: 'https://weatherapi-com.p.rapidapi.com/'
+                headers: 
+                    X-RapidAPI-Host: 'weatherapi-com.p.rapidapi.com'
+                    X-RapidAPI-Key: '%env(WEATHER_API_KEY)%'
 
 when@test:
     framework:

@@ -1,0 +1,89 @@
+<style>
+.stars {
+  font-size: 20px;
+  line-height: 1;
+  font-family: sans-serif;
+  display: inline-block;
+  cursor: pointer;
+
+  --limit: calc(var(--stars) * 20%);
+}
+  
+.stars::before {
+    letter-spacing: 3px;
+    content: '★★★★★';
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #fb1 var(--limit), #fff var(--limit));
+    background-clip: text;
+  }
+</style>
+
+<div class="py-20 px-10">
+    <form class="order-form" method="get">
+        <div>
+            <label for="order">Trier par notation:</label>
+            <select name="order" id="order" onchange="this.form.submit()">
+                <option value='no'>Ne pas trier</option>
+                <option value="asc">De la moins bien à la meilleure</option>
+                <option value="desc">De la meilleure à la moins bien</option>
+            </select>
+        </div>
+    </form>
+    <div class="overflow-scroll w-full flex overflow-x-scroll space-x-10 px-10 py-10">
+        {% for restaurant in getRestaurants(piste_id, app.request.query.all) %}
+        <div class="restaurant flex-none w-[300px] h-[350px] overflow-hidden bg-[#112748] text-white rounded-[15px] grid-cols-1 grid-rows-2" data-stars="{{ restaurant.stars }}" data-id="{{restaurant.id}}">
+            <img class="h-[50%] w-[100%] object-cover" src="{{ restaurant.imagePath }}" alt="{{ restaurant.name }}">
+            <div class="px-5 py-2 flex flex-col justify-evenly h-[50%]">
+                <h4 class="text-xl">{{ restaurant.name }}</h4>
+                <p class="text-base">{{ restaurant.description }}</p>
+                <div class="flex gap-3">
+                    <div class="stars" style="--stars: {{ restaurant.stars }};"></div>
+                    <span class="text-sm"><span class="star-vote-count">{{ restaurant.starVoteCount }}</span> Votes</span>
+                </div>
+                <a href="#" class="text-center border-white rounded-[5px] border px-2 py-1 hover:bg-white hover:text-[#112748] transition font-medium">Réserver</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+const select = document.querySelector('select');
+select.value = new URLSearchParams(window.location.search).get("order") || 'no';
+
+for (const restaurant of document.getElementsByClassName("restaurant")) {
+    const id = restaurant.getAttribute('data-id');
+    const currentStars = restaurant.getAttribute('data-stars');
+    let alreadyVoted = false;
+
+    /** @type {HTMLDivElement} */
+    const starsEl = restaurant.querySelector(".stars");
+    /** @type {HTMLS} */
+    const starVoteCountEm = restaurant.querySelector(".star-vote-count");
+    const rect = starsEl.getBoundingClientRect();
+
+    starsEl.addEventListener('mousemove', event => {
+        if (alreadyVoted) return;
+        const stars = Math.ceil(event.offsetX / rect.width * 5);
+        starsEl.style = "--stars: " + stars + ";"
+    });
+
+    starsEl.addEventListener('mouseleave', () => {
+        if (alreadyVoted) return;
+        starsEl.style = "--stars: " + currentStars + ";"
+    });
+
+    starsEl.addEventListener('click', event => {
+        if (alreadyVoted) return;
+        const stars = Math.ceil(event.offsetX / rect.width * 5);
+        fetch(`/restaurant/${id}/vote/${stars}`)
+            .then(res => res.json())
+            .then(({ star_vote_count, stars }) => {
+                alreadyVoted = true;
+                starsEl.style = "--stars: " + currentStars + ";"
+                starVoteCountEm.innerText = star_vote_count;
+            });
+    });
+}
+
+</script>

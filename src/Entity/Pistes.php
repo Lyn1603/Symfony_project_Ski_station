@@ -3,6 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\PistesRepository;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +29,16 @@ class Pistes
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $close_at = null;
+
+
+    #[ORM\OneToMany(mappedBy: 'piste', targetEntity: Restaurant::class)]
+    private Collection $restaurants;
+
+    public function __construct()
+    {
+        $this->restaurants = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -78,4 +92,36 @@ class Pistes
 
         return $this;
     }
+
+
+    /**
+     * @return Collection<int, Restaurant>
+     */
+    public function getRestaurants(): Collection
+    {
+        return $this->restaurants;
+    }
+
+    public function addRestaurant(Restaurant $restaurant): self
+    {
+        if (!$this->restaurants->contains($restaurant)) {
+            $this->restaurants->add($restaurant);
+            $restaurant->setPiste($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRestaurants(Restaurant $restaurant): self
+    {
+        if ($this->restaurants->removeElement($restaurant)) {
+            // set the owning side to null (unless already changed)
+            if ($restaurant->getPiste() === $this) {
+                $restaurant->setPiste(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
