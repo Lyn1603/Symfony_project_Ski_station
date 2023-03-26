@@ -29,5 +29,8 @@
             </div>
     </div>
 
+    <center>{{ component('weather', { location: piste.location }) }}</center>
+    {{ component('restaurant_carousel', { piste_id: piste.id }) }}
+
 </div>
 {% endblock %}

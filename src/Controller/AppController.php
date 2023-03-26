@@ -81,7 +81,7 @@ class AppController extends AbstractController
 
         ]);
     }
-    
+
     #[Route('/restaurant/{id}/vote/{stars}', name: 'app_restaurant_vote')]
     public function restaurantVote(int $id, int $stars, RestaurantRepository $restaurantRepository): Response
     {
