@@ -1,4 +1,4 @@
-# Nom du projet
+# Ski & Co
 
 Ce projet est un site web développé en utilisant Symfony,et Tailwind 
 
