@@ -34,13 +34,13 @@
             background-repeat: no-repeat;
             background-position: center;
             width: 100%;
-            height: 20vh;
-            position: relative;
-            bottom: 110px;
+            height: 25vh;
+
+
         }
     </style>
     <!--  HEADER -->
-    <div class="bg-[#496C90] h-screen">
+    <div class="bg-[#496C90] h-screen w-full">
 
         <div class="flex flex-row h-full">
 
@@ -169,11 +169,8 @@
     </div>
             <a  class=" text-center font-thin mx-[25px] bg-[#112748] text-[#637C96] text-2xl rounded-full rounded-tl-none py-2 w-max px-8 mt-4"  href="{{ path('app_station') }}"> Ajouter une stations </a>
 
-
-        </div>
-            <!--  FIN PARTIE STATIONS -->
             <!--  Partie webcam  -->
-            <div class="flex w-screen h-[35vh] bg-[#496C90] items-center">
+            <div class=" mt-[5%] flex w-[100vw] h-[35vh] bg-[#496C90] items-center">
                 <div onclick="window.open('http://m.webcam-hd.com/val-d-arly-ot/ndb-mont-rond','mywindow');" class=" bg-[url('https://cdn.france-montagnes.com/sites/default/files/sarenne_laurent-salino-29.jpg')] bg-cover bg-center bg-no-repeat  flex mx-auto h-[30vh] w-10/12  rounded-xl rounded-tl-none justify-center items-center  "    >
                     <h1  class= " flex font-thin text-black text-2xl bg-blue-300 bg-opacity-50 rounded-xl ">
                         Observer les piste en direct
@@ -181,6 +178,9 @@
 
                 </div>
                 <!--  Fin Partie webcam  -->
+        </div>
+            <!--  FIN PARTIE STATIONS -->
+
             <!--  PARTIE APPLICATION -->
 
             <div id="APPLICATION">
@@ -220,18 +220,34 @@
 
                 </div>
 
-                <img src="{{ asset('medias/male_iphone.png') }}" alt="">
+                <img class="mt-12" src="{{ asset('medias/male_iphone.png') }}" alt="">
 
             </div>
 
 
         </div>
+
     </div>
-        <div class="wave2">
+            <div class="wave2">
+                <!-- PARTIE BADGES -->
+                <div class= " flex flex-col justify-center items-center font-thin mx-[25px] bg-[#496C90] text-white text-2xl rounded-full rounded-tl-none py-2 w-max px-8" >
+                    <a href="{{ path('app_badge_user') }}">
+                        <div class="flex flex-row gap-4 ">
+                            <div class="flex flex-col justify-center items-center">
+                                <span class="text-center text-[12px]"> Gagne des Badges </span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <!-- FIN PARTIE BADGES -->
+            </div>
+
+
 
         </div>
 
-        </div>
+    </div>
 
     <!-- FIN PARTIE APPLICATION -->
 
