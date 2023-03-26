@@ -4,23 +4,23 @@ namespace App\Controller;
 
 
 use App\Entity\Pistes;
-use App\Form\PictureType;
 use App\Entity\Stations;
 use App\Form\StationsType;
 use App\Repository\PistesRepository;
-use App\Repository\StationsRepository;
+use App\Repository\RestaurantRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AppController extends AbstractController
 {
     #[Route('/', name: 'app_app')]
-
     public function index(): Response
     {
         return $this->render('app/index.html.twig', [
@@ -79,6 +79,41 @@ class AppController extends AbstractController
         return $this->render('stations/station.html.twig', [
             'stations' => $stations,
 
+        ]);
+    }
+
+
+
+    #[Route('/pistes', name: 'app_pistes')]
+    public function pistes( PistesRepository $pistesRepository): Response
+    {
+        return $this->render('pistes/piste.html.twig', [
+            'pistes' => $pistesRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/restaurant/{id}/vote/{stars}', name: 'app_restaurant_vote')]
+    public function restaurantVote(int $id, int $stars, RestaurantRepository $restaurantRepository): Response
+    {
+        $restaurant = $restaurantRepository->find($id);
+        if (is_null($restaurant)) {
+            throw new NotFoundHttpException("Restaurant not found");
+        }
+
+        $restaurant->vote($stars);
+        $restaurantRepository->save($restaurant, true);
+
+        return new JsonResponse(array(
+            "star_vote_count" => $restaurant->getStarVoteCount(),
+            "stars" => $restaurant->getStars()
+        ));
+    }
+
+    #[Route('/pistes/{id}', name: 'app_piste')]
+    public function resort(int $id, PistesRepository $pistesRepository): Response
+    {
+        return $this->render('resort/index.html.twig', [
+            'piste' => $pistesRepository->find($id),
         ]);
     }
 

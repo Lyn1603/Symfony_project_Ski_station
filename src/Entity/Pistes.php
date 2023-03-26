@@ -24,6 +24,9 @@ class Pistes
     #[ORM\Column]
     private ?float $length = null;
 
+    #[ORM\Column]
+    private ?string $location = null;
+
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $open_at = null;
 
@@ -93,6 +96,18 @@ class Pistes
     public function setCloseAt(\DateTimeInterface $close_at): self
     {
         $this->close_at = $close_at;
+
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(string $location): self
+    {
+        $this->location = $location;
 
         return $this;
     }

@@ -5,6 +5,6 @@
 {% block body %}
 <h1>Ski Resort</h1>
 
-{{ component('weather', { location: 'Gavarnie' }) }}
-{{ component('restaurant_carousel', { piste_id: 21 }) }}
+{{ component('weather', { location: piste.location }) }}
+{{ component('restaurant_carousel', { piste_id: piste.id }) }}
 {% endblock %}
