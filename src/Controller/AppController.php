@@ -81,17 +81,7 @@ class AppController extends AbstractController
 
         ]);
     }
-
-
-
-    #[Route('/pistes', name: 'app_pistes')]
-    public function pistes( PistesRepository $pistesRepository): Response
-    {
-        return $this->render('pistes/piste.html.twig', [
-            'pistes' => $pistesRepository->findAll(),
-        ]);
-    }
-
+    
     #[Route('/restaurant/{id}/vote/{stars}', name: 'app_restaurant_vote')]
     public function restaurantVote(int $id, int $stars, RestaurantRepository $restaurantRepository): Response
     {
@@ -109,12 +99,6 @@ class AppController extends AbstractController
         ));
     }
 
-    #[Route('/pistes/{id}', name: 'app_piste')]
-    public function resort(int $id, PistesRepository $pistesRepository): Response
-    {
-        return $this->render('resort/index.html.twig', [
-            'piste' => $pistesRepository->find($id),
-        ]);
-    }
+   
 
 }
