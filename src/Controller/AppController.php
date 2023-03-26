@@ -77,7 +77,7 @@ class AppController extends AbstractController
         }
 
         return $this->render('stations/station.html.twig', [
-            'stations' => $stations,
+            'form' => $form->createView(),
 
         ]);
     }

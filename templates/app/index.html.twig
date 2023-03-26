@@ -39,6 +39,7 @@
             bottom: 110px;
         }
     </style>
+    <!--  HEADER -->
     <div class="bg-[#496C90] h-screen">
 
         <div class="flex flex-row h-full">
@@ -65,57 +66,69 @@
                 <ul class="flex flex-row text-[2.5vh] justify-around items-center mt-7 gap-[-5px] text-white  ">
 
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Connexion</a></li>
+                    <li><a href="#"> Nos Services</a></li>
+                    <li><a href="#">Nos Stations</a></li>
+                    <li><a href="#">Application</a></li>
+                    <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
 
                 </ul>
 
             </div>
 
         </div>
+        <!--  FIN HEADER -->
 
-        <div class="bg-[#496C90] h-[80vh]">
+        <!--  PARTIE SERVICES -->
+
+        <div class="SERVICES">
+
+
+            <div class="bg-[#496C90] h-[80vh]">
             <span class="mt-4 text-white border-b-[5px] px-[8%] rounded-[2px]">
             </span>
-            <div class= "font-thin mx-[25px] bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-2 w-max px-8 mt-4">
-                SERVICES
-            </div>
-
-
-            <div class="flex flex-row justify-center items-center">
-
-                <div class="flex flex-row justify-center items-center w-[85vw] ">
-
-                <div class="flex flex-col gap-4 text-white">
-                    <img class=" mx-[40%] w-[89px]" src="{{ asset('medias/money.png') }}" alt="">
-                    <h2 class="text-center"> MEILLEUR PRIX</h2>
-                    <p>Prenez vos places dès maintenant La réservation sur le site officiel garantit le meilleur prix.</p>
-
+                <div class= "font-thin mx-[25px] bg-white text-[#637C96] text-2xl rounded-full rounded-tl-none py-2 w-max px-8 mt-4">
+                    SERVICES
                 </div>
 
 
-                <div class="flex flex-col gap-6 text-white">
-                    <img class=" mx-[40%] w-[89px]" src="{{ asset('medias/pass.png') }}" alt="">
-                    <h2 class="text-center"> SKI PASS</h2>
-                    <p>Réservez un logement et bénéficiez de conditions avantageuses pour votre forfait de ski.</p>
+                <div class="flex flex-row justify-center items-center">
+
+                    <div class="flex flex-row justify-center items-center w-[85vw] ">
+
+                        <div class="flex flex-col gap-4 text-white">
+                            <img class=" mx-[40%] w-[89px]" src="{{ asset('medias/money.png') }}" alt="">
+                            <h2 class="text-center"> MEILLEUR PRIX</h2>
+                            <p>Prenez vos places dès maintenant La réservation sur le site officiel garantit le meilleur prix.</p>
+
+                        </div>
+
+
+                        <div class="flex flex-col gap-6 text-white">
+                            <img class=" mx-[40%] w-[89px]" src="{{ asset('medias/pass.png') }}" alt="">
+                            <h2 class="text-center"> SKI PASS</h2>
+                            <p>Réservez un logement et bénéficiez de conditions avantageuses pour votre forfait de ski.</p>
+
+                        </div>
+
+
+                        <div class="flex flex-col gap-3 text-white">
+                            <img class=" mx-[36%] w-[89px]" src="{{ asset('medias/services.png') }}" alt="">
+                            <h2 class="text-center text-[1.1rem] "> SERVICES </h2>
+                            <p>Service clientèle par téléphone avant et pendant votre séjour.</p>
+
+                        </div>
+
+
+                    </div>
+
 
                 </div>
 
+        </div>
 
-                <div class="flex flex-col gap-3 text-white">
-                    <img class=" mx-[36%] w-[89px]" src="{{ asset('medias/services.png') }}" alt="">
-                    <h2 class="text-center text-[1.1rem] "> SERVICES </h2>
-                    <p>Service clientèle par téléphone avant et pendant votre séjour.</p>
+            <!-- FIN PARTIE SERVICES -->
 
-                </div>
-
-
-                </div>
-
-
-            </div>
+            <!--  PARTIE STATIONS -->
 
             <div class="wave">
 
@@ -124,34 +137,41 @@
                 STATIONS
             </div>
 
+        <div class="STATIONS">
+
             <div class="flex flex-row justify-center items-center gap-0.5 mt-[55px] text-[#112748]">
 
-                <div class="flex flex-col gap-4 justify-center items-center ">
-                    <img class=" w-[95%]" src="{{ asset('medias/saisie.png') }}" alt="">
-                    <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Les Saisies </h2> </a>
-                </div>
+        <div class="flex flex-col gap-4 justify-center items-center ">
+            <img class=" w-[95%]" src="{{ asset('medias/saisie.png') }}" alt="">
+            <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Les Saisies </h2> </a>
+        </div>
 
-                <div class="flex flex-col gap-4 justify-center items-center ">
-                    <img class=" w-[95%]" src="{{ asset('medias/crest.png') }}" alt="">
-                    <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Crest-Volant Cohennoz </h2> </a>
-                </div>
+        <div class="flex flex-col gap-4 justify-center items-center ">
+            <img class=" w-[95%]" src="{{ asset('medias/crest.png') }}" alt="">
+            <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Crest-Volant Cohennoz </h2> </a>
+        </div>
 
-                <div class="flex flex-col gap-4 justify-center items-center ">
-                    <img class=" w-[95%]" src="{{ asset('medias/notre_dame.png') }}" alt="">
-                    <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Notre-Dame-de-Bellecombe </h2> </a>
-                </div>
+        <div class="flex flex-col gap-4 justify-center items-center ">
+            <img class=" w-[95%]" src="{{ asset('medias/notre_dame.png') }}" alt="">
+            <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Notre-Dame-de-Bellecombe </h2> </a>
+        </div>
 
-                <div class="flex flex-col gap-4 justify-center items-center ">
-                    <img class=" w-[95%]" src="{{ asset('medias/parly.png') }}" alt="">
-                    <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Praz-sur-Arly </h2> </a>
-                </div>
+        <div class="flex flex-col gap-4 justify-center items-center ">
+            <img class=" w-[95%]" src="{{ asset('medias/parly.png') }}" alt="">
+            <a href="">  <h2 class=" font-bold text-center text-[1.1rem]"> Praz-sur-Arly </h2> </a>
+        </div>
 
-                <div class="flex flex-col gap-4 justify-center items-center ">
-                    <img class=" w-[95%]" src="{{ asset('medias/flumet.png') }}" alt="">
-                    <a href="">  <h2 class="font-bold text-center text-[1.1rem]"> Flumet </h2> </a>
-                </div>
+        <div class="flex flex-col gap-4 justify-center items-center ">
+            <img class=" w-[95%]" src="{{ asset('medias/flumet.png') }}" alt="">
+            <a href="">  <h2 class="font-bold text-center text-[1.1rem]"> Flumet </h2> </a>
+        </div>
 
-            </div>
+    </div>
+
+
+</div>
+            <!--  FIN PARTIE STATIONS -->
+
 
             <div class="flex flex-row justify-left gap-[30vw] mt-[30vh] ml-8 ">
 
