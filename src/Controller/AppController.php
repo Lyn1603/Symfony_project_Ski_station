@@ -42,12 +42,10 @@ class AppController extends AbstractController
     {
         return $this->render('piste/piste_id.html.twig', [
             'piste' => $piste,
-
         ]);
     }
 
-
-
+    
     #[Route('/station', name: 'app_station')]
     public function Nstation( Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager ): Response
     {
