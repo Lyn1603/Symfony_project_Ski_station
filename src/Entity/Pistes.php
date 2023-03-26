@@ -37,6 +37,10 @@ class Pistes
     #[ORM\OneToMany(mappedBy: 'piste', targetEntity: Restaurant::class)]
     private Collection $restaurants;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Stations $station_id = null;
+
     public function __construct()
     {
         $this->restaurants = new ArrayCollection();
@@ -135,6 +139,18 @@ class Pistes
                 $restaurant->setPiste(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getStationId(): ?Stations
+    {
+        return $this->station_id;
+    }
+
+    public function setStationId(?Stations $station_id): self
+    {
+        $this->station_id = $station_id;
 
         return $this;
     }
