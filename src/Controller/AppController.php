@@ -3,11 +3,14 @@
 namespace App\Controller;
 
 
+use App\Entity\Pistes;
 use App\Form\PictureType;
 use App\Entity\Stations;
+use App\Form\StationsType;
 use App\Repository\PistesRepository;
 use App\Repository\StationsRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,11 +28,31 @@ class AppController extends AbstractController
         ]);
     }
 
+    #[Route('/pistes', name: 'app_pistes')]
+    public function pistes(PistesRepository $pistesRepository): Response
+    {
+        return $this->render('pistes/piste.html.twig', [
+            'pistes' => $pistesRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/piste{id}', name: 'app_piste', methods: ['GET'])]
+
+    public function piste_id(Pistes $piste): Response
+    {
+        return $this->render('piste/piste_id.html.twig', [
+            'piste' => $piste,
+
+        ]);
+    }
+
+
+
     #[Route('/station', name: 'app_station')]
     public function Nstation( Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager ): Response
     {
         $stations = new Stations();
-        $form = $this->createForm(PictureType::class, $stations);
+        $form = $this->createForm(StationsType::class, $stations);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
@@ -55,17 +78,6 @@ class AppController extends AbstractController
 
         return $this->render('stations/station.html.twig', [
             'stations' => $stations,
-
-        ]);
-    }
-
-
-    #[Route('/piste', name: 'app_piste')]
-    public function pistes( PistesRepository $pistesRepository): Response
-    {
-        return $this->render('pistes/piste.html.twig', [
-            'controller_name' => 'AppController',
-            'pistes' => $pistesRepository->findAll(),
 
         ]);
     }
