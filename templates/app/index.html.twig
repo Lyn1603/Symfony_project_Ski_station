@@ -66,9 +66,9 @@
                 <ul class="flex flex-row text-[2.5vh] justify-around items-center mt-7 gap-[-5px] text-white  ">
 
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="#"> Nos Services</a></li>
-                    <li><a href="#">Nos Stations</a></li>
-                    <li><a href="#">Application</a></li>
+                    <li><a href="#SERVICES"> Nos Services</a></li>
+                    <li><a href="#STATIONS">Nos Stations</a></li>
+                    <li><a href="#APPLICATION">Application</a></li>
                     <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
 
                 </ul>
@@ -80,7 +80,7 @@
 
         <!--  PARTIE SERVICES -->
 
-        <div class="SERVICES">
+        <div id="SERVICES">
 
 
             <div class="bg-[#496C90] h-[80vh]">
@@ -137,7 +137,7 @@
                 STATIONS
             </div>
 
-        <div class="STATIONS">
+        <div id="STATIONS">
 
             <div class="flex flex-row justify-center items-center gap-0.5 mt-[55px] text-[#112748]">
 
@@ -172,6 +172,8 @@
             <!--  FIN PARTIE STATIONS -->
 
             <!--  PARTIE APPLICATION -->
+
+            <div id="APPLICATION">
 
             <div class="flex flex-row justify-left gap-[30vw] mt-[30vh] ml-8 ">
 
@@ -214,12 +216,13 @@
 
 
         </div>
+    </div>
         <div class="wave2">
 
         </div>
-        <!-- FIN PARTIE APPLICATION -->
 
+        </div>
 
-    </div>
+    <!-- FIN PARTIE APPLICATION -->
 
 {% endblock %}
