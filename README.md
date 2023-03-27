@@ -17,7 +17,7 @@ bash
 
 composer install
 
-markdown
+npm i
 
 
 3. Copiez le fichier `.env` et modifiez les variables d'environnement appropriées, telles que la configuration de la base de données.
@@ -26,21 +26,20 @@ markdown
 
 php bin/console doctrine:migrations:migrate
 
-markdown
 
 
 5. Lancez le serveur web en exécutant la commande suivante:
 
 symfony server:start
 
-vbnet
+
 
 
 6. Accédez au site web en visitant l'URL suivante dans votre navigateur:
 
 http://localhost:8000
 
-markdown
+
 
 
 ## Utilisation
